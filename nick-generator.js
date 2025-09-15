@@ -146,12 +146,11 @@ class NickGenerator {
         return this.generateSingleVariation(nick, randomStyle);
     }
 
-    // Gerar todas as variações
+    // Gerar todas as variações (mantém lógica antiga)
     generateVariations(nick) {
         const variations = [];
         const styles = ['uppercase', 'lowercase', 'alternating', 'cyrillic', 'decorated', 'mixed', 'symbols'];
 
-        // Gerar variações definidas
         for (const style of styles) {
             const variation = this.generateSingleVariation(nick, style);
             if (!variations.includes(variation)) {
@@ -159,7 +158,6 @@ class NickGenerator {
             }
         }
 
-        // Completar com variações aleatórias
         while (variations.length < this.maxVariations) {
             const variation = this.generateRandomVariation(nick);
             if (!variations.includes(variation)) {
@@ -167,27 +165,22 @@ class NickGenerator {
             }
         }
 
-        // Adicionar decorações ocasionais
-        const decoratedVariations = [];
-        variations.forEach(variation => {
-            if (Math.random() > 0.7 && variation.length < CONFIG.MAX_NICK_LENGTH - 2) {
-                const deco = this.decorativeSymbols[Math.floor(Math.random() * this.decorativeSymbols.length)];
-                if (Math.random() > 0.5) {
-                    decoratedVariations.push(deco + variation);
-                } else {
-                    decoratedVariations.push(variation + deco);
-                }
-            }
-        });
+        return variations.slice(0, this.maxVariations);
+    }
 
-        // Mesclar variações decoradas
-        decoratedVariations.forEach(variation => {
-            if (!variations.includes(variation) && variations.length < this.maxVariations) {
+    // Gerar NOVO CONJUNTO sempre com 10 variações
+    generateNewSet(nick) {
+        const cleanNick = this.filterAllowedChars(nick);
+        const variations = [];
+
+        while (variations.length < 10) {
+            const variation = this.generateRandomVariation(cleanNick);
+            if (!variations.includes(variation)) {
                 variations.push(variation);
             }
-        });
+        }
 
-        return variations.slice(0, this.maxVariations);
+        return variations;
     }
 
     // Gerar ideias aleatórias
