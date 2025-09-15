@@ -90,15 +90,6 @@ const DECORATIVE_SYMBOLS = [
 const NICK_IDEAS = [
   'Shadow','Viper','Neo','Nova','Specter','Rogue','Drift',
   'Blaze','Frost','Pulse','Storm','Venom','Echo','Phantom','Night'
-  'CoilGod','SnekRush','SlithOP','FangX','HissLord','ViperZ','Scalez','Coil9','TailCrush','ZigZagX',
-  'SnekOP','CoilSlayer','VenomR','RattleZ','WrmGod7','SnekK1ng','CoilDash','FangSlr','HissOP','ZigOP9',
-  'UnicrnX','GalaxyZ','DragnOP','NeonSlr','Goldn9','ShdwKng','CandyZ','LavaGod','IceFang','NinjaXZ',
-  'Rainbow7','FlameCoil','PixelWrm','ToxicSkin','MechaSnek','AuroraOP','VoidWorm','StellarZ','Glitch99','DragonX',
-  'Morena','Dopamina','Chucro','K9','Feijao','Pernilong','Tartaruga','Aura','Bruto','Cafune',
-  'Pipoca','Chinelo','Biscoito','Panela','Chaveiro','Canguru','Lanche','Preguica','Chuchu','Cuzcuz',
-  'Gibi','Balaclava','Pirulito','Coxinha','Siri','Lagartixa','Tapioca','Banheira','Chimarrao','Fuba',
-  'Caramelo','Pamonha','Galinha','Cuca','Pirata','Carrinho','Tenis','Chapeu','Manteiga','Cenoura',
-  'Lixeira','Bexiga','Cafeteira','Pregador','Chuveiro','Abajur','Colher','Prego','Lousa','Cebola'
 ];
 
 // ----------------------
