@@ -443,6 +443,18 @@ main {
     100% { transform: scale(1); }
 }
 
+/* mantém a estética no site */
+body {
+  font-family: 'CyberpunkFont', sans-serif;
+}
+
+/* neutraliza fonte só nos nicks */
+.nick-output {
+  font-family: monospace, Arial, sans-serif !important;
+  font-size: 1.2em;
+  letter-spacing: normal;
+}
+
 /* Ideas Section */
 .ideas-section {
     padding: 3rem;
