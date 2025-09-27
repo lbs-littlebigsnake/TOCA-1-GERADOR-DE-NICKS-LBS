@@ -81,12 +81,6 @@ class UIController {
     handleInputChange(e) {
         this.updateCharCounter();
         localStorage.setItem('lastNick', e.target.value);
-        // Resetar botão ao limpar input
-        if (this.elements.nickInput.value.trim() === "") {
-            this.elements.generateBtn.textContent = "Gerar";
-            this.elements.nicksList.innerHTML = "";
-        }
-
     }
 
     // Manipular tecla pressionada
@@ -173,12 +167,7 @@ class UIController {
         this.incrementGenerationCount();
 
         // Gerar variações
-        const variations = nickGenerator.generateNewSet(nick);
-
-        // Resetar botão após nova geração
-        if (this.elements.generateBtn.textContent === "Gerar") {
-            this.elements.generateBtn.textContent = "Gerar novamente";
-        }
+        const variations = nickGenerator.generateVariations(nick);
 
         // Limpar resultados anteriores
         this.elements.nicksList.innerHTML = '';
